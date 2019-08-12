@@ -1,5 +1,5 @@
 # Time Series (High-Impedence-Fault) Classification
-High Impedence Fault Classification is a time series classification problem. Model is 1D convolutional.
+High Impedence Fault Classification is a time series classification problem. Model is 1D CNN.
 
 ## Dataset
 Each instance conists of 30 step recording of energy signal in the system.
