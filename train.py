@@ -131,7 +131,6 @@ trn_sz = len(datasets[0])
 trn_dl, val_dl, tst_dl = create_loaders(datasets, bs=16)
 
 
-#device = torch.cuda.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 
 lr = 0.001
 n_epochs = 3000
@@ -196,12 +195,6 @@ for epoch in range(1, n_epochs + 1):
             
 print('Done!')
 
-
-def smooth(y, box_pts):
-    box = np.ones(box_pts)/box_pts
-    y_smooth = np.convolve(y, box, mode='same')
-    return y_smooth
-
 fig = plt.figure(figsize=(12, 10))
 ax1 = fig.add_subplot(2,1,1)
 ax1.plot(loss_history, label='loss')
@@ -210,7 +203,6 @@ ax1.set_xlabel('Epoch no.')
 ax1.set_ylabel('Loss')
 
 ax2 = fig.add_subplot(2,1,2)
-#ax2.plot(smooth(acc_history, 5)[:-2], label='acc')
 ax2.plot(acc_history, label='acc')
 ax2.set_title('Validation Accuracy History')
 ax2.set_xlabel('Epoch no.')
